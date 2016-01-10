@@ -10,12 +10,53 @@ layout: default
                 <div class="site-heading">
                     <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
                     <hr class="small">
-                    <span class="subheading">{{ page.description }}</span>
+                    <span class="subheading">
+                        {% if page.description %}
+                            {{ page.description }}
+                        {% else %}
+
+                            <div class="typed_element">
+                                <div class="typed_sub-element">Hello, this is Typed.js</div>
+                                <div class="typed_sub-element">Awesome Template is provided by templatemo.com website for everyone</div>
+                                <div class="typed_sub-element">Download, edit and apply this awesome template for your websites</div>
+                            </div>
+
+
+                            <!-- jQuery -->
+                            <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+                            <!-- Typed -->
+                            <script src="{{ "/js/typed.js " | prepend: site.baseurl }}"></script>
+                            <script type="text/javascript">
+                                /* start typed element */
+                                //http://stackoverflow.com/questions/24874797/select-div-title-text-and-make-array-with-jquery
+                                jQuery(function(){
+                                    var subElementArray = jQuery.map(jQuery('.typed_sub-element'), function(el) { return jQuery(el).text(); }); 
+                                    console.log("hola mama");
+                                    console.log(jQuery(".typed_element"));
+                                    // jQuery(".typed_element").text("CONIO!")
+                                    console.log(jQuery(".typed_element").typed);
+                                    tel = jQuery(".typed_element");
+                                    tel.typed({
+                                        strings: subElementArray,
+                                        typeSpeed: 30,
+                                        contentType: 'html',
+                                        showCursor: true,
+                                        loop: true,
+                                        loopCount: true
+                                    });
+                                });
+                            /* end typed element */
+                            </script>
+
+
+                        {% endif %}
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
+
 
 <!-- Main Content -->
 <div class="container">
