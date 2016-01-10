@@ -21,6 +21,10 @@
     100% { opacity:1; }
 }
 
+.typed_sub-element{
+  display: none;
+}
+
 
 /* CLEAN BLOG */
 body {
