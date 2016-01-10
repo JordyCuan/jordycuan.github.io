@@ -15,11 +15,13 @@ layout: default
                             {{ page.description }}
                         {% else %}
 
-                            <div class="typed_element">
-                                <div class="typed_sub-element">Hello, this is Typed.js</div>
-                                <div class="typed_sub-element">Awesome Template is provided by templatemo.com website for everyone</div>
-                                <div class="typed_sub-element">Download, edit and apply this awesome template for your websites</div>
-                            </div>
+                            <span class="typed_element">
+                                <div class="typed_sub-element">Hello, this is Typed.js^1000</div>
+                                <div class="typed_sub-element">It tyops out</div>
+                                <div class="typed_sub-element">It types out sentences.^1000</div>
+                                <div class="typed_sub-element">Awesome Template!^1000</div>
+                                <div class="typed_sub-element">Download, edit and apply^1000</div>
+                            </span>
 
 
                             <!-- jQuery -->
@@ -28,23 +30,36 @@ layout: default
                             <script src="{{ "/js/typed.js " | prepend: site.baseurl }}"></script>
                             <script type="text/javascript">
                                 /* start typed element */
-                                //http://stackoverflow.com/questions/24874797/select-div-title-text-and-make-array-with-jquery
-                                jQuery(function(){
+                                // http://stackoverflow.com/questions/24874797/select-div-title-text-and-make-array-with-jquery
+
+                                // http://stackoverflow.com/questions/33441448/including-typed-js-in-wordpress
+                                (function($){
                                     var subElementArray = jQuery.map(jQuery('.typed_sub-element'), function(el) { return jQuery(el).text(); }); 
-                                    console.log("hola mama");
-                                    console.log(jQuery(".typed_element"));
-                                    // jQuery(".typed_element").text("CONIO!")
-                                    console.log(jQuery(".typed_element").typed);
-                                    tel = jQuery(".typed_element");
-                                    tel.typed({
+                                    jQuery(".typed_element").typed({
                                         strings: subElementArray,
-                                        typeSpeed: 30,
+                                        typeSpeed: 25,
                                         contentType: 'html',
                                         showCursor: true,
-                                        loop: true,
-                                        loopCount: true
+                                        loop: false,
+                                        loopCount: true,
+                                        backDelay: 0,
+                                        backspace: function(curString, curStrPos){
+                                            setTimeout(function() {
+                                                // check string array position
+                                                // on the first string, only delete one word
+                                                // the stopNum actually represents the amount of chars to
+                                                // keep in the current string. In my case it's 3.
+                                                if (self.arrayPos == 1){
+                                                    self.stopNum = 3;
+                                                }
+                                                //every other time, delete the whole typed string
+                                                else{
+                                                    self.stopNum = 0;
+                                                }
+                                            });
+                                        }
                                     });
-                                });
+                                })(jQuery);
                             /* end typed element */
                             </script>
 
