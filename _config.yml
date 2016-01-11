@@ -1,10 +1,10 @@
 # Site settings
-title: JordyCuan
+title: Jordy Cuan
 header-img: img/home-bg.jpg
 #email: your-email@yourdomain.com
 description: "Write your site description here. It will be used as your sites meta description as well!"
-baseurl: ""
-url: "http://yourdomain.com"
+baseurl: "https://jordycr.github.io"
+url: "https://jordycr.github.io"
 twitter_username: JordyCRPetrucci
 github_username:  jordycr
 google_plus_username:  JordyCuanPetrucci
