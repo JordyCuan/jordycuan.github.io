@@ -27,9 +27,8 @@ header-img: "img/post-bg-01.jpg"
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
 
-<a href="#">
-    <img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Image">
-</a>
+<img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Image">
+
 <span class="caption text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
