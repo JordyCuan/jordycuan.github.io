@@ -2,7 +2,7 @@
 title: Jordy Cuan
 header-img: img/home-bg.jpg
 #email: your-email@yourdomain.com
-description: "Write your site description here. It will be used as your sites meta description as well!"
+description: "Jordy Cuan - My own programming experiences"
 baseurl: ""
 url: "https://jordycr.github.io"
 twitter_username: JordyCRPetrucci
@@ -15,7 +15,7 @@ highlighter: pygments
 permalink: pretty
 paginate: 5
 gems: [jekyll-paginate]
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","READ ME.md"]
 
 ## ???
 analytics :

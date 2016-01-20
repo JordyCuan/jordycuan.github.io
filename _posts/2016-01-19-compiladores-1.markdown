@@ -2,7 +2,7 @@
 layout:     post
 title:      "Iniciando con los Compiladores (Parte 1)"
 subtitle:   "Conceptos básicos, Autómatas finitos y AFD en Python"
-# date:       2014-07-01 12:00:00
+date:       2016-01-19 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-01.jpg"
 code_syntax: True
