@@ -1,0 +1,1 @@
+(function($){var b=jQuery.map(jQuery('.typed_sub-element'),function(a){return jQuery(a).text()});jQuery('.typed_element').typed({strings:b,typeSpeed:25,contentType:'html',showCursor:true,loop:false,loopCount:true,backDelay:0})})(jQuery);

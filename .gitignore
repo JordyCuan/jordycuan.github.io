@@ -1,3 +1,7 @@
 .jekyll-metadata
 _site
 notas.txt
+
+.ipynb_checkpoints
+*.ipynb
+*.zip

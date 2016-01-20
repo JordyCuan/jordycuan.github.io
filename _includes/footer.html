@@ -57,3 +57,18 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/js/clean-blog.min.js " | prepend: site.baseurl }}"></script>
+
+
+{% if page.code_syntax %}
+<!-- SyntaxHighlighter -->
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css_sh/shCore.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css_sh/shThemeDefault.css">
+<script src="{{ site.baseurl }}/js_sh/shCore.js"></script>
+<script src="{{ site.baseurl }}/js_sh/shLegacy.js"></script>
+<script src="{{ site.baseurl }}/js_sh/shBrushPython.js"></script>
+
+<script type="text/javascript">
+    SyntaxHighlighter.config.toolbar = true;
+    SyntaxHighlighter.all();
+</script>
+{% endif %}

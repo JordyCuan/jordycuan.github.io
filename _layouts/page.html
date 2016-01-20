@@ -18,7 +18,7 @@ layout: default
                             <span class="typed_element">
                                 <div class="typed_sub-element">Hello!^1500</div>
                                 <div class="typed_sub-element">Welvcome t</div>
-                                <div class="typed_sub-element">Welcome to my blog.^500</div>
+                                <div class="typed_sub-element">Welcome to my blog.^1000</div>
                                 <div class="typed_sub-element">Feel free to Read and Learn :)</div>
                             </span>
                             </strong>
@@ -27,26 +27,9 @@ layout: default
                             <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
                             <!-- Typed -->
                             <script src="{{ "/js/typed.js " | prepend: site.baseurl }}"></script>
-                            <script type="text/javascript">
-                                /* start typed element */
-                                // http://stackoverflow.com/questions/24874797/select-div-title-text-and-make-array-with-jquery
-
-                                // http://stackoverflow.com/questions/33441448/including-typed-js-in-wordpress
-                                (function($){
-                                    var subElementArray = jQuery.map(jQuery('.typed_sub-element'), function(el) { return jQuery(el).text(); }); 
-                                    jQuery(".typed_element").typed({
-                                        strings: subElementArray,
-                                        typeSpeed: 25,
-                                        contentType: 'html',
-                                        showCursor: true,
-                                        loop: false,
-                                        loopCount: true,
-                                        backDelay: 0
-                                    });
-                                })(jQuery);
-                            /* end typed element */
-                            </script>
-
+                            
+                            <!-- Page Description -->
+                            <script src="{{ "/js/description.js " | prepend: site.baseurl }}"></script>
 
                         {% endif %}
                     </span>
