@@ -126,6 +126,7 @@ Aprovechando la sintaxis que tienen las tablas de transición de los autómatas,
 
 <h4>Fichero:</h4>
 {% highlight python %}
+
         a   b
 i   0   1   2
     1   3   2
@@ -231,7 +232,7 @@ def open_AFD(path):
 {% endhighlight %}
 
 <br>
-<p>Perfecto! ahora que ya tenemos nuestro autómata en una estructura de dato lo único que hace falta es que el programa tome una cadena y se emplee nuestra estructura para verificar si la cadena es válida o no tomando en consideración los puntos ya mencionados antes.</p>
+<p>Perfecto! ahora que ya tenemos nuestro autómata en una estructura de datos lo único que hace falta es que el programa tome una cadena y se emplee nuestra estructura para verificar si la cadena es válida o no tomando en consideración los puntos ya mencionados antes.</p>
 
 <p>Para validar la cadena yo definí lo siguiente:</p>
 
