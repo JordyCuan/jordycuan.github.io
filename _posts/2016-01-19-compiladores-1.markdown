@@ -232,7 +232,7 @@ def open_AFD(path):
 {% endhighlight %}
 
 <br>
-<p>Perfecto! ahora que ya tenemos nuestro autómata en una estructura de datos lo único que hace falta es que el programa tome una cadena y se emplee nuestra estructura para verificar si la cadena es válida o no tomando en consideración los puntos ya mencionados antes.</p>
+<p>Perfecto! ahora que ya tenemos nuestro autómata en una estructura de datos lo único que hace falta es que el programa tome una cadena y ocupar nuestra estructura para verificar si la cadena es válida o no, tomando en consideración los puntos ya mencionados antes.</p>
 
 <p>Para validar la cadena yo definí lo siguiente:</p>
 
@@ -277,7 +277,7 @@ if __name__ == '__main__':
         print "La cadena NO ES VALIDA"
 {% endhighlight %}
 
-<p>Pues como en una receta de ceral con leche: ponemos todo junto y comemos. Del mismo modo juntamos estas funciones sin olvidar el siempre útil If-Main de Python. Pasemos a ver los resultados de la ejecución usando las mismas cadenas de entrada que dijimos antes que eran válidas para nuestro autómata:</p>
+<p>Pues como en una receta de cereal con leche: ponemos todo junto y comemos. Del mismo modo juntamos estas funciones sin olvidar el siempre útil If-Main de Python. Pasemos a ver los resultados de la ejecución usando las mismas cadenas de entrada que dijimos antes que eran válidas para nuestro autómata:</p>
 
 <pre>
 Introduce la cadena a validar
