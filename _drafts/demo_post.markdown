@@ -5,6 +5,10 @@ subtitle:   "because they lacked opposable thumbs and the brainpower to build a 
 date:       2014-06-10 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-01.jpg"
+
+# Pruebas
+#category: articles
+tags: [sample post, readability, test, intro]
 ---
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>

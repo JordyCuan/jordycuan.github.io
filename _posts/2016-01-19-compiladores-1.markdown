@@ -6,6 +6,8 @@ date:       2016-01-19 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-01.jpg"
 code_syntax: True
+
+tags: [compiladores, python, afd, intro]
 ---
 
 <p>Podría poner aquí la historia de los compiladores y como se desarrollaron pero eso cualquiera lo puede conseguir en San Wikipedia por lo que yo tocaré otros puntos que me parecen interesantes.</p>
@@ -20,15 +22,15 @@ code_syntax: True
 
 <p>Ahora bien, sin pasar por mucha teoría diré que en 1959, Rabin y Scott proponen el empleo de AFD y AFN para el reconocimiento lexicográfico de los lenguajes. Aquí es cuando preguntan <i>¿Qué son AFD y AFN?¿A qué te refieres con lexicográfico?</i> Bien, si no terminaron de leer todo lo que dice Wikipedia yo se los explico rápido.</p>
 
-<p>Para la pregunta sobre <i>lexicográfico</i> les diré que el proceso de "compilación" se divide en dos principales etapas: <strong>análisis</strong> y <strong>síntesis</strong>. Y algo destacado aquí es que éstas se unen mediante un código intermedio que produce toda la magía en lo que conocemos como lenguajes multiplataforma. Que comience la breve explicación.</p>
+<p>Para la pregunta sobre <i>lexicográfico</i> les diré que el proceso de "compilación" se divide en dos principales etapas: <strong>análisis</strong> y <strong>síntesis</strong>. Y algo destacado aquí es que éstas se unen mediante un código intermedio que produce toda la magia en lo que conocemos como lenguajes multiplataforma. Que comience la breve explicación.</p>
 
 
 <h4>Análisis, Síntesis y Código Intermedio</h4>
 <p>Sólo imaginen una computadora con Windows y otra con Ubuntu, escribimos nuestro típico "Hola mundo" en el lenguaje C ¿Por qué funciona el mismo código en Windows y Linux? Adivinaste: Código intermedio.</p>
 
-<p>El <strong>análisis</strong> es aquella etapa que se realiza con el código de alto nivel. Esta define como interpretar el código fuente dado. Podríamos decir que un Hola Mundo en Scala y uno en C aplican el análisis y generan un código intermedio igual (quiero decir, similar). Por esto, nuestros programas en C (sin contar librerías) son lo mismo en cualquier equipo y sistema.</p>
+<p>El <strong>análisis</strong> es aquella etapa que se realiza con el código de alto nivel. Esta define cómo interpretar el código fuente dado. Podríamos decir que un Hola Mundo en Scala y uno en C aplican el análisis y generan un código intermedio igual (quiero decir, similar). Por esto, nuestros programas en C (sin contar librerías) son lo mismo en cualquier equipo y sistema.</p>
 
-<p>Ahora, la <strong>síntesis</strong> es la que toma un código intermedio y <i>'revisa con que CPU cuenta la computadora, que sistema operativo es y generar el código objeto'</i> (dicho coloquialmente). Esto es lo que hace que nuestro programa en C pueda ejecutarse en Windows o en Mac OS X. Cada sistema recibirá el mismo código intermedio pero tendrá diferente código objeto.</p>
+<p>Ahora, la <strong>síntesis</strong> es la que toma un código intermedio y <i>'revisa con qué CPU cuenta la computadora, que sistema operativo es y generar el código objeto'</i> (dicho coloquialmente). Esto es lo que hace que nuestro programa en C pueda ejecutarse en Windows o en Mac OS X. Cada sistema recibirá el mismo código intermedio pero tendrá diferente código objeto.</p>
 
 <p>Además, en estas dos etapas podemos encontrar varias sub-etapas. Por decir algunas, dentro de la síntesis está la optimización del código y la generación del código objeto. Algunas sub-etapas del análisis son: análisis <strong>léxico</strong>, sintáctico y semántico.</p>
 
@@ -42,9 +44,9 @@ code_syntax: True
 
 <h2 class="section-heading">Autómatas Finitos</h2>
 
-<p>Un AFD es Autómata Finito Determinista y AFN es Autómata Finito No determinista. Todo empieza a tener sentido ¿no? Entonces pasemos a definir primero que es un Autómata.</p>
+<p>Un AFD es Autómata Finito Determinista y AFN es Autómata Finito No determinista. Todo empieza a tener sentido ¿no? Entonces pasemos a definir primero qué es un Autómata.</p>
 
-<p>Seré breve. Un autómata es un modelo matemático abstraido de un sistema de transición de estado finito. A ver, y ¿Qué es esto? Definamos algunos conceptos conceptos.</p>
+<p>Seré breve. Un autómata es un modelo matemático abstraído de un sistema de transición de estado finito. A ver, y ¿Qué es esto? Definamos algunos conceptos conceptos.</p>
 
 <p><ul>
         <li>
@@ -58,7 +60,7 @@ code_syntax: True
         </li>
 </ul></p>
 
-<p>Para quienes conozcan sobre temas de Sistemas digitales, es similar a maquinas de mealy y moore.</p>
+<p>Para quienes conozcan sobre temas de Sistemas digitales, es similar a máquinas de mealy y moore.</p>
 
 <p>Podríamos decir que un autómata parte de un estado inicial y según ciertos valores de entrada va cambiando de estado, hasta llegar a un estado final. Para el caso en que se terminen los valores de entrada y no esté en un estado final, diremos que el conjunto de valores dados no es aceptado por el autómata.</p>
 
@@ -76,7 +78,7 @@ code_syntax: True
                 Si ya no recibimos nada más, entonces podemos decir que la cadena 'aa' es aceptada en el lenguaje del autómata.
         </li>
         <li>
-                Si solo hubieramos recibido una 'a' (si el autómata se quedaba en un estado no final). Entonces la cadena 'a' no es aceptada por el autómata.
+                Si solo hubiéramos recibido una 'a' (si el autómata se quedaba en un estado no final). Entonces la cadena 'a' no es aceptada por el autómata.
         </li>
         <li>
                 Si en el estado 3, que no tiene transición a ningún otro estado se hubiera dado en la entrada algo más entonces 'aaX' es un lenguaje no válido.
@@ -103,11 +105,11 @@ code_syntax: True
 
 <h2 class="section-heading">Implementación en Python de un AFD</h2>
 
-<p>Si quisieramos implementar un AFD en python deberíamos de tener en consideración:</p>
+<p>Si quisiéramos implementar un AFD en python deberíamos de tener en consideración:</p>
 
 <p><ul>
         <li>
-                Como introducir los datos del autómata a nuestro algoritmo indicando el alfabeto, estado inicial, estados finales y otros estados.
+                Cómo introducir los datos del autómata a nuestro algoritmo indicando el alfabeto, estado inicial, estados finales y otros estados.
         </li>
         <li>
                 Cómo validar una cadena y cuándo esta es válida o no para nuestro autómata.
@@ -120,7 +122,7 @@ code_syntax: True
 
 <p><h4>Propuesta:</h4>
 
-Aprovechando la sintaxis que tienen las tablas de transición de los autómatas, podemos definir 'tablas' en archivos de texto plano (Como en la Imagen 2). Si nos damos cuenta, en el primer renglón de la tabla  se encuentran los elementos del alfabeto. Despues, por cada renglón que vayamos leyendo, el primer elemento será el estado actual y los demás son las transiciones. Hay que tener en cuenta que se debe de definir un modo para reconocer si es estado inicial o final.</p>
+Aprovechando la sintaxis que tienen las tablas de transición de los autómatas, podemos definir 'tablas' en archivos de texto plano (Como en la Imagen 2). Si nos damos cuenta, en el primer renglón de la tabla  se encuentran los elementos del alfabeto. Después, por cada renglón que vayamos leyendo, el primer elemento será el estado actual y los demás son las transiciones. Hay que tener en cuenta que se debe de definir un modo para reconocer si es estado inicial o final.</p>
 
 <p>Entonces debemos de abrir un fichero con la tabla y leer ordenadamente.</p>
 
@@ -142,7 +144,7 @@ def pick_file():
     '''
     (None) -> StringPath
 
-    Función que abre un dialogo para seleccionar un archivo y devuelve el 
+    Función que abre un diálogo para seleccionar un archivo y devuelve el 
     path del archivo
 
     NOTA: Si el usuario pulsa "Cancelar", el valor devuelto será cadena vacía ("")
@@ -150,8 +152,8 @@ def pick_file():
     from Tkinter import Tk
     from tkFileDialog import askopenfilename
 
-    Tk().withdraw() # No queremos una GUI completa, asi que se oculta el resto de la GUI
-    filename = askopenfilename() # Mostramos un Dialogo para abrir ficheros
+    Tk().withdraw() # No queremos una GUI completa, así que se oculta el resto de la GUI
+    filename = askopenfilename() # Mostramos un Diálogo para abrir ficheros
 
     return filename # Se regresa el path
 {% endhighlight %}
@@ -212,7 +214,7 @@ def open_AFD(path):
     # Podríamos considerar una buena idea implementar una tablahash de tablashash
     # El modo de acceso sería:
     #   transhash[edoactual][elemento_entrante]
-    # Lo comentado anteriormente se verá con mas detalle después
+    # Lo comentado anteriormente se verá con más detalle después
     # Comenzamos a crear nuestro AFD (transhash)
     i = 0 
     j = 0
@@ -241,7 +243,7 @@ def validar_cadena(cadena):
     '''
     (str) -> bool
 
-    Se valida si la cadena proporcionada es una palabra valida para el autómata
+    Se valida si la cadena proporcionada es una palabra válida para el autómata
     '''
     
     alfabeto, edoini, edosfin, transhash = open_AFD(pick_file())
@@ -252,9 +254,9 @@ def validar_cadena(cadena):
     i = 0
     while (i != n):
         if (not (char in alfabeto)):
-            return False  # Se dió una cadena que no está dentro del alfabeto valido
+            return False  # Se dió una cadena que no está dentro del alfabeto válido
         if (transhash[edoactual][char] == '-'):
-            return False  # Se encontró que no es valido y no pertenece al lenguaje aceptado por el autómata
+            return False  # Se encontró que no es válido y no pertenece al lenguaje aceptado por el autómata
 
         edoactual = transhash[edoactual][char]
         i += 1
