@@ -5,7 +5,6 @@ subtitle:   "Conceptos básicos, Autómatas finitos y AFD en Python"
 date:       2016-01-19 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-01.jpg"
-code_syntax: True
 
 tags: [compiladores, python, afd, intro]
 ---

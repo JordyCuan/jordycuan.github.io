@@ -8,7 +8,7 @@ header-img: "img/post-bg-01.jpg"
 
 # Pruebas
 #category: articles
-tags: [sample post, readability, test, intro]
+tags: [sample post]
 ---
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
