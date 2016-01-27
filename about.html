@@ -9,18 +9,10 @@ header-img: "./img/about-bg.jpg"
 {% include skills.html %}
 
 
-
-
-
-
-<div>
-	
-	<h3><br><br><br>Estudiante universitario y desarrollador de software en python, java y javascript (también músico)</h3><br>
-
-
-	<div id="wrapper" style="text-align: center"><div 
+<div id="wrapper" style="text-align: center"><div 
 	class="img-circle img-responsive" 
 	style="
+		margin-top: 60px;
 		display: inline-block;
 		width: 300px;
 		height: 300px;
@@ -31,5 +23,48 @@ header-img: "./img/about-bg.jpg"
 		box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 		-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 		-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	"></div></div>
-</div>
+	">
+</div></div>
+<span class="caption text-muted">Jordy Cuan.</span>
+
+
+
+{% assign total_words = 0 %}
+{% assign total_readtime = 0 %}
+{% assign featuredcount = 0 %}
+{% assign statuscount = 0 %}
+
+{% for post in site.posts %}
+    {% assign post_words = post.content | strip_html | number_of_words %}
+    {% assign readtime = post_words | append: '.0' | divided_by:200 %}
+    {% assign total_words = total_words | plus: post_words %}
+    {% assign total_readtime = total_readtime | plus: readtime %}
+    {% if post.featured %}
+    {% assign featuredcount = featuredcount | plus: 1 %}
+    {% endif %}
+{% endfor %}
+
+
+<p>My name is <b>Jordy Cuan</b>, and this is my personal blog. It currently has {{ site.posts | size }} posts in {{ site.tags | size }} tags which combinedly have {{ total_words }} words, which will take an average reader (200 <abbr title="Word per Minute">WPM</abbr>) approximately <span class="time">{{ total_readtime }}</span> minutes to read. {% if featuredcount != 0 %}There are <a href="{{ site.url }}/featured">{{ featuredcount }} featured posts</a>, you should definitely check those out.{% endif %} The most recent post is <u>{% for post in site.posts limit:1 %}{% if post.description %}<a href="{{ site.url }}{{ post.url }}" title="{{ post.description }}">"{{ post.title }}"</a>{% else %}<a href="{{ site.url }}{{ post.url }}" title="{{ post.description }}" title="Read more about {{ post.title }}">"{{ post.title }}"</a>{% endif %}{% endfor %}</u> which was published on {% for post in site.posts limit:1 %}{% assign modifiedtime = post.modified | date: "%Y%m%d" %}{% assign posttime = post.date | date: "%Y%m%d" %}<time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if post.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}{% endfor %}. The last commit was on {{ site.time | date: "%A, %d %b %Y" }} at {{ site.time | date: "%I:%M %p" }} <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time" title="Temps Universel Coordonné">UTC</a>.</p>
+
+<!--
+<p>Mi nombre es <b>Jordy Cuan</b>, y este es mi blog personal. Actualmente tiene {{ site.posts | size }} posts con {{ site.tags | size }} tags y suma un total de {{ total_words }} palabras, que tomaría a un lector promedio (200{{ site.wpm }} <a href="https://es.wikipedia.org/wiki/Palabras_por_minuto#Lectura" title="Promedio mínimo de PpM">Palabras/Minuto</a>) aproximadamente <span class="time">{{ total_readtime }}</span> minutos para leerlas. {% if featuredcount != 0 %}There are <a href="{{ site.url }}/featured">{{ featuredcount }} featured posts</a>, you should definitely check those out.{% endif %} El post más reciente es <u>{% for post in site.posts limit:1 %}{% if post.description %}<a href="{{ site.url }}{{ post.url }}" title="{{ post.description }}">"{{ post.title }}"</a>{% else %}<a href="{{ site.url }}{{ post.url }}" title="{{ post.description }}" title="Leer más de {{ post.title }}">"{{ post.title }}"</a>{% endif %}{% endfor %}</u> que fue publicado el {% for post in site.posts limit:1 %}{% assign modifiedtime = post.modified | date: "%Y%m%d" %}{% assign posttime = post.date | date: "%Y%m%d" %}<time datetime="{{ post.date | date_to_xmlschema }}" class="post-time">{{ post.date | date: "%d %b %Y" }}</time>{% if post.modified %}{% if modifiedtime != posttime %} and last modified on <time datetime="{{ post.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ post.modified | date: "%d %b %Y" }}</time>{% endif %}{% endif %}{% endfor %}. El último commit fue el {{ site.time | date: "%d %b %Y" }} at {{ site.time | date: "%I:%M %p" }} <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time" title="Temps Universel Coordonné">UTC</a>.</p>
+-->
+
+<p>Soy estudiante universitario de la <a href="http://www.buap.mx">BUAP</a> y estudio la carrera en Ingeniería en Ciencias de la Computación. Si todo marcha bien terminaré la carrera en Diciembre de 2016. Fui seleccionado como alumno de intercambio en Argentina durante el periodo del 7 de Marzo al 25 de Julio del 2016. Actualmente tengo interés por Machine Learning que he aprendido en las plataformas Coursera y Udacity tal como lo hice con Android (Ver <a href="{{ site.cv_en }}">CV</a>)</p>	
+
+<img src="{{ site.baseurl }}/img/yo_.jpg" class="img-responsive img-circle">
+
+<p>desarrollador de software en python, java y javascript (también músico)</p>
+
+
+
+
+
+
+
+
+
+
+
+

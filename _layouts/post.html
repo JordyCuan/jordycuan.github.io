@@ -14,6 +14,7 @@ comments: True
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
                     <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="caption" style="text-align: left; font-size: 16px; padding: 0;">{{ content | number_of_words | plus:90 | divided_by:180 }} minute read</span>
                 </div>
             </div>
         </div>
@@ -29,9 +30,9 @@ comments: True
 				{{ content }}
 
 
-<h2 class="section-heading">Dudas / Comentarios</h2>
+                <h2 class="section-heading">Dudas / Comentarios</h2>
 
-<p>Si tienes alguna duda o comentario, escríbelo <a href="#disqus_thread">aquí</a> o mandame un tweet a <a href="https://twitter.com/JordyCRPetrucci"><b>@JordyCRPetrucci</b></a> y te ayudaré con gusto</p>
+                <p>Si tienes alguna duda o comentario, escríbelo <a href="#disqus_thread">aquí</a> o mandame un tweet a <a href="https://twitter.com/JordyCRPetrucci"><b>@JordyCRPetrucci</b></a> y te ayudaré con gusto.</p>
 
 
 
