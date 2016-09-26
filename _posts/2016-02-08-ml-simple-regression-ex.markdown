@@ -44,7 +44,7 @@ regr = linear_model.LinearRegression()
 regr.fit(X_train, y_train)
 
 # Coeficientes
-print 'Coefficients:', regr.coef_
+print 'Coefficients:', regr.coef_, regr.intercept_
 # RSS
 print "Residual sum of squares: %.2f" % np.mean((regr.predict(X_test) - y_test) ** 2)
 
@@ -131,7 +131,7 @@ regr = linear_model.LinearRegression()
 regr.fit(X_train, y_train)
 
 # Coeficientes
-print 'Coefficients:', regr.coef_
+print 'Coefficients:', regr.coef_, regr.intercept_
 # RSS
 print "Residual sum of squares: %.2f" % np.mean((regr.predict(X_test) - y_test) ** 2)
 
@@ -195,7 +195,7 @@ regr = linear_model.LinearRegression()
 regr.fit(X_train.to_numpy()[:,np.newaxis], y_train.to_numpy()[:,np.newaxis])
 
 # Coeficientes
-print 'Coefficients:', regr.coef_
+print 'Coefficients:', regr.coef_, regr.intercept_
 # RSS
 print "Residual sum of squares: %.2f" % ((regr.predict(X_test.to_numpy()[:,np.newaxis]) - y_test.to_numpy()[:,np.newaxis]) ** 2).mean()
 

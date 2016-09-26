@@ -5,3 +5,4 @@ notas.txt
 .ipynb_checkpoints
 *.ipynb
 *.zip
+.DS_Store
