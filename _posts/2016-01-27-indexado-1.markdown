@@ -2,12 +2,12 @@
 layout: post
 title: "Recuperación y Tratamiento de Información (Parte 1)"
 subtitle:   "Indexado de documentos locales y elaboración de consultas."
-date:       2016-01-27 12:00:00
+date:       2016-03-27 12:00:00
 header-img: "img/post-bg-02.jpg"
 author:     "Jordy Cuan"
 code_syntax: True
 
-tags: [información, intro, python, indexado]
+tags: [información, python, indexado]
 ---
 
 <p>Comenzando con un nuevo post para el blog sobre lo que es indexado, ya saben, eso que hace google de modo inconmensurable al internet.</p>
