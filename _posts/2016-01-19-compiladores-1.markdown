@@ -6,7 +6,7 @@ date:       2016-01-19 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-01.jpg"
 
-tags: [compiladores, python, afd, intro]
+tags: [compiladores, python, afd]
 ---
 
 <p>Podría poner aquí la historia de los compiladores y como se desarrollaron pero eso cualquiera lo puede conseguir en San Wikipedia por lo que yo tocaré otros puntos que me parecen interesantes.</p>

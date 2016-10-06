@@ -2,11 +2,11 @@
 layout: post
 title: "Machine Learning: Simple Linear Regression"
 subtitle:   "Tres ejemplos para \"principiantes\" usando Scikit-Learn, NumPy y SFrame."
-date:       2016-02-08 12:00:00
+date:       2016-05-08 12:00:00
 header-img: "img/post-bg-03.jpg"
 author:     "Jordy Cuan"
 
-tags: [machine learning, intro, python, regression]
+tags: [machine learning, python]
 ---
 
 <p></p>
