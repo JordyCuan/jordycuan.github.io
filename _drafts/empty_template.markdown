@@ -2,7 +2,7 @@
 layout:     post
 title:      " T I T L E "
 subtitle:   " S U B T I T L E ."
-date:       2016-09-21 12:00:00
+date:       2014-09-21 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-04.jpg"
 

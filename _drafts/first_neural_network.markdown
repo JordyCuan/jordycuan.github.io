@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      " T I T L E "
-subtitle:   " S U B T I T L E ."
+title:      "My First Neural Network"
+subtitle:   "Literally, my first NN implemented in Python"
 date:       2016-09-21 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-04.jpg"
