@@ -18,15 +18,15 @@
                 <li>
                     <a href="{{ site.baseurl }}/">Home</a>
                 </li>
-                <li>
-                    <!-- style="pointer-events: none;cursor: default;"  -->
+              <!--  <li>
+                    <!-- style="pointer-events: none;cursor: default;"  - - >
                     <a 
                         
                         href="https://goo.gl/p7AVKC">
 
                         CV
                     </a>
-                </li>
+                </li>-->
                 {% for page in site.pages %}{% if page.title %}
                 <li>
                     <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
