@@ -1,9 +1,21 @@
 ---
 layout: page
-title: CV
+title: Jordy Cuan
 permalink: /CV/index.html
-description: "This is me."
+description: "CV"
 header-img: "./img/tags-bg.jpg"
 ---
 
-<iframe src="./cv/cv.htm"></iframe>
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+<!--
+
+<iframe src="/cv/cv.htm" width="110%" frameborder="0" scrolling="no" onload="resizeIframe(this)" />
+
+-->
+
+<iframe src="/cv/cv.htm" scrolling="no" style="border:0px;" height="1610px" width="110%"></iframe>
