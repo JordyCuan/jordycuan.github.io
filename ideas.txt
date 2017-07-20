@@ -1,0 +1,13 @@
+*Realm DB - Investigacion
+
+*Redes Neuronales
+
+*Hill ascend/descend and Gradiend descent
+
+*Regression simple
+
+*Regression multivariable
+
+*SailsJS
+
+*React con SailsJS
