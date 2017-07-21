@@ -34,15 +34,32 @@ Existen otras funciones que no son ni cóncavas ni convexas como la siguiente, d
 
 En algún momento de este algoritmo vamos a querer buscar el punto x donde f(x) tenga el menor o mayor valor posible, y bueno, para nosotros es fácil encontrarlo si tenemos a la vista la gráfica, pero ¿Cómo encontramos estos valores matemáticamente?
 
+
+
 ¡¡¡Punto de inflexión!!!
 
 
 ----Derivada
 
+Pues adivinaste, es mediante el uso de Derivadas. Daré por hecho que como buen alumno autodidacta buscaste algo para refrescar tu memoria. Así que vamos a algo más práctico. 
+
+Supongamos que tenemos la siguiente función 
+g(x)=5-(x-10)^2
+si observamos su comportamiento al graficarla podemos ver que es cóncava y que su punto máximo, que es 5, es alcanzado cuando x vale 10.
+
+GRAFICA
+
+Pero sin ver la gráfica, si derivamos la función (tóma un papel y lápiz y hazlo, sirve mucho) tenemos que g'(x)=-2x+20 y si igualamos a 0 para conseguir el valor de x, este vale 10 que es el punto donde g(x) alcanza su máximo. Si quieres hacer experimentos con gráficas te recomiendo esta página https://www.desmos.com/calculator.
+
+Ahora bien, explicando un poco más lo anterior, el valor de x=10 es nuestro punto de inflexión ya que en este punto g'(x) no es ni positivo ni negativo. Si tomamos otro valor de x, antes de x=10, g'(x) será siempre positivo y, de modo contrario, si tomamos un valor para x que sea mayor a 10, este siempre será negativo.
+
+A la forma que usamos para hallar este punto de x=10 podemos encontrarlo como Fitted Model. Pero siempre hay formas distintas de hacerlo.
+
+
 Derivamos... e igualamos a 0... Esto es algo que luego lo podemos encontrar como Fitted Model... Y la otra manera de hacerlo es por medio de los descensos
 
 
---Empecemos con lo fácil. Descenso de colina para encontrar maximos o mínimos
+--Ascenso o descenso de colina para encontrar maximos o mínimos
 
 
 --Multiples dimensiones y Gradiantes
