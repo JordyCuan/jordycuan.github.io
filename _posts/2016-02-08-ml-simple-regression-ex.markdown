@@ -66,7 +66,7 @@ Coefficients: [ 938.23786125]
 Residual sum of squares: 2548.07
 {% endhighlight %}
 
-<img src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/plot_1.png" alt="Image">
+<img src="{{ site.baseurl }}/img/{{ page.date | date: '%Y/%m/%d' }}/plot_1.png" alt="Image">
 <span class="caption text-muted">Plot 1: Dataset de diabetes y su modelo predictivo.</span>
 
 
