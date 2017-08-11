@@ -20,6 +20,13 @@ tags: []
   		max-width: 950px;
 	}
 </style>
+<!--
+<div>
+<div class="img- col-md-4"></div>
+<img class="img- col-md-4" src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/concave.png" alt="Concave">
+<div class="img- col-md-4"></div>
+</div>
+-->
 
 <p>Más que nada este artículo lo escribo porque mucha gente se preguntará ¿Qué es el descenso de colina? ¿Cómo implementar el descenso de gradiente? o cosas por el estilo. En este post trataré de explicar matemáticamente que son y para que se usan. Comenzaré diciendo que son algoritmos enfocados a la optimización pero eso ya deberían saberlo, sino no estarían aquí.</p>
 
@@ -27,24 +34,16 @@ tags: []
 
 <p>Primero que nada debemos recordar qué es una función "cóncava" y una "convexa". Una función es cóncava cuando podemos tomar dos puntos cualesquiera en el dominio de la función y al unir estos puntos por una recta, esta SIEMPRE quedará por debajo de la curva. La siguiente imagen ayuda mejor a entender esta definición. Recuerda, si siempre queda por debajo de la curva entonces es cóncava.</p>
 
-<div>
-<div class="img- col-md-4"></div>
-<img class="img- col-md-4" src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/concave.png" alt="Concave">
-<div class="img- col-md-4"></div>
-</div>
+<center><img src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/concave.png" alt="Concave"></center>
 
 <div><p>De modo similar, una función será convexa siempre que al unir dos puntos en el dominio de esta, el segmento que los une queda por encima de la curva.</p></div>
 
-<div class="img- col-md-4"></div>
-<img class="img- col-md-4" src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/convex.png" alt="Concave">
-<div class="img- col-md-4"></div>
-
+<center><img src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/convex.png" alt="Convex"></center>
 
 Existen otras funciones que no son ni cóncavas ni convexas como la siguiente, donde si tomamos dos puntos del dominio y trazamos una línea recta, esta pasa tanto por encima como por debajo de la gráfica.
 
-<div class="img- col-md-4"></div>
-<img class="img- col-md-4" src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/neither.png" alt="Concave">
-<div class="img- col-md-4"></div>
+<center><img src="{{ site.baseurl }}/img/{{ page.date | date: '%Y-%m-%d' }}/neither.png" alt="Neither"></center>
+
 
 
 <h3 class="section-heading">Buscando máximos o mínimos analíticamente</h3>
@@ -175,3 +174,12 @@ binary_dim = 8
 <p></p>
 
 <p></p>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+	    jQuery('center img').attr('width', '60%');
+	});
+</script>
