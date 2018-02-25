@@ -11,7 +11,7 @@ header-img: "./img/about-bg.jpg"
 # *Hi there!*
 
 <div style="text-align: justify">
-	My name is <b>Jordy Cuan</b> and I'm a passionte Software Developer who can build useful web services. I am highly knowledgeable in Javascript (ECMA 6 & 7) development ecosystem and also fluent on python scripting with great experience building back-end architectures; working with excellent people; and constantly learning.
+	My name is <b>Jordy Cuan</b> and I'm a passionate Software Developer who can build useful web services. I am highly knowledgeable in Javascript (ECMA 6 & 7) development ecosystem and also fluent on python scripting with great experience building back-end architectures; working with excellent people; and constantly learning.
 </div>
 <div class="row" style="padding-bottom: 1em"></div>
 
