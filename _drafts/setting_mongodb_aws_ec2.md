@@ -73,9 +73,9 @@ One step more that I sugest is to enable MongoDB to automatically start when the
 sudo systemctl enable mongod
 ```
 
-You are able now to access MongoDB by typing `mongod` but let's secure this to access it remotely, it's more fun.
+Now you're able to access MongoDB by typing `mongod` but let's secure it, to access it remotely, it's more fun that way.
 
-You can find a complete documentetion installing MongoDB [here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/).
+You can find the complete documentation to install MongoDB [here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/).
 
 &nbsp;
 ## Securing MongoDB
@@ -128,7 +128,7 @@ You can take this moment to give some super powers to your coworkers.
 > )
 ```
 
-**Important:** When you try to connect remotely you have indicate which db you want (rather you are associated). If you are an admin but you just have roles on `admin` db you should connect to this one. You won't be able to connect to `dummy_coworkers_db` but you can set this role to you later.
+**Important:** When you try to connect remotely you have to indicate which db you want. If you are an admin but you just have roles on `admin` db you should connect to this one. You won't be able to connect to `dummy_coworkers_db` but you can set this role to you later.
 
 If you did something wrong you can [updateUser](https://docs.mongodb.com/manual/reference/method/db.updateUser/).
 
