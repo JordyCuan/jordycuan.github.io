@@ -9,9 +9,9 @@ header-img: "img/post-bg-05.jpg"
 code_syntax: True
 ---
 
-Well, first of all, as you can see I am not good naming my post haha but I guess you can figure what is this post about.
+Well, first of all, as you can see I am not good naming my post haha but I guess you can figure out what this post is about.
 
-Few days ago some colleagues and I decided to start a little project just for fun and I was in charge of installing a MongoDB server where we could store some data we were going to use for this. So here is what I found. (I'll skip the part where you create an AWS instance. Let's leave that for another occasion).
+A few days ago, some colleagues and I decided to start a little project just for fun and I was in charge of installing a MongoDB server where we could store some data for a later use. So here is what I found. (I'll skip the part where you create an AWS instance. Let's leave that for another occasion).
 
 
 &nbsp;
@@ -45,7 +45,7 @@ sudo apt-get update
 &nbsp;
 ## Installing the MongoDB packages
 
-You don't need to be a guru genius Ubuntu hacker to know what's the next step.
+You don't need to be a guru genius Ubuntu hacker to know what's the next step. This command will install several packages which include the latest stable version of MongoDB along with helpful management tools for the MongoDB server.
 
 ```shell
 sudo apt-get install -y mongodb-org
@@ -73,7 +73,7 @@ One step more that I sugest is to enable MongoDB to automatically start when the
 sudo systemctl enable mongod
 ```
 
-Now you're able to access MongoDB by typing `mongod` but let's secure it, to access it remotely, it's more fun that way.
+Now you're able to access your MongoDB by typing the command `mongod`. Now let's create a secure connection so that we can access it remotely, it's more fun that way.
 
 You can find the complete documentation to install MongoDB [here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/).
 
