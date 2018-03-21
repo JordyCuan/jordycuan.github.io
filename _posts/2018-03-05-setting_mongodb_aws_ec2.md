@@ -2,10 +2,10 @@
 layout:     post
 title:      "MongoDB AWS EC2 Ubuntu 16.04 Guide"
 subtitle:   "Setting up and securing a MongoDB server inside an AWS EC2 ubuntu instance to access it remotely."
-date:       2018-03-01 12:00:00
+date:       2018-03-05 12:00:00
 author:     "Jordy Cuan"
 header-img: "img/post-bg-05.jpg"
-
+main-img:   "/img/2018-03-05/systemctl_status.png"
 code_syntax: True
 ---
 
