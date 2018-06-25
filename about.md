@@ -49,8 +49,8 @@ header-img: "./img/about-bg.jpg"
         <div>Redis, Mongoose (MongoDB) and Sequelize (MySQL/PostgreSQL). <i>Honestly, I prefer to type queries instead of using an ORM.</i></div>
         <div class="row" style="padding-bottom: 1em"></div>
 
-        <h4>Deployment (just a little):</h4>
-        <div>AWS EC2 Instances management and Docker.</div>
+        <h4>Deployment:</h4>
+        <div>AWS EC2 Instances management, NGINX and Docker (just a little).</div>
         <div class="row" style="padding-bottom: 1em"></div>
 
         <h4>Other:</h4>
