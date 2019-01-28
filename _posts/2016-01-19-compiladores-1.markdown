@@ -254,6 +254,7 @@ def validar_cadena(cadena):
     while (i != n):
         if (not (char in alfabeto)):
             return False  # Se dió una cadena que no está dentro del alfabeto válido
+
         if (transhash[edoactual][char] == '-'):
             return False  # Se encontró que no es válido y no pertenece al lenguaje aceptado por el autómata
 

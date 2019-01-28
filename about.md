@@ -64,7 +64,7 @@ header-img: "./img/about-bg.jpg"
     <div class="col-md-3"><h3>Education</h3></div>
     <div class="col-md-9">
     	<h4>Universidad Nacional del Sur (Exchange)</h4>
-        <h5><i>Bahía Blanca, Argentina<span>🇦🇷</span></span></i></h5>
+        <h5><i>Bahía Blanca, Argentina<span>🇦🇷</span></i></h5>
         <div>Informatics Engineering, Mar 2016 - Jul 2016</div>
 
         <div class="row" style="padding-bottom: 1em"></div>
