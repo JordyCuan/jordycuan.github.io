@@ -38,7 +38,7 @@ header-img: "./img/about-bg.jpg"
     <div class="col-md-3"><h3>Technical Skills</h3></div>
     <div class="col-md-9">
         <h4>Javascript:</h4>
-        <div>Fluent in  ES2015. Knowledge in the React ecosystem, JS unit testing with SuperTest and Mocha. NodeJS, ExpressJS, SailsJS, RESTful APIs, Web-sockets, Amazon Web Services (node sdk).</div>
+        <div>Fluent in  ES2015. Knowledge in VueJS and React ecosystem, JS unit testing with Cypress, SuperTest and Mocha. NodeJS, ExpressJS, SailsJS, RESTful APIs, Web-sockets, Amazon Web Services (node sdk).</div>
         <div class="row" style="padding-bottom: 1em"></div>
 
         <h4>Python:</h4>
@@ -64,12 +64,12 @@ header-img: "./img/about-bg.jpg"
     <div class="col-md-3"><h3>Education</h3></div>
     <div class="col-md-9">
     	<h4>Universidad Nacional del Sur (Exchange)</h4>
-        <h5><i>Bahía Blanca, Argentina<span class="flag-icon flag-icon-ar"></span></i></h5>
+        <h5><i>Bahía Blanca, Argentina<span>🇦🇷</span></span></i></h5>
         <div>Informatics Engineering, Mar 2016 - Jul 2016</div>
 
         <div class="row" style="padding-bottom: 1em"></div>
         <h4>Benemérita Universidad Autónoma de Puebla</h4>
-        <h5><i>Puebla, México<span class="flag-icon flag-icon-mx"></span></i></h5>
+        <h5><i>Puebla, México<span>🇲🇽</span></i></h5>
         <div>B.Eng., Computer Science, 2011-2015</div>
     </div>
 </div>
