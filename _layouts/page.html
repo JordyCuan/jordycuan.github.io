@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <hr class="small">
+                    <span class="subheading">
+                        {% if page.description %}
+                            {{ page.description }}
+                        {% else %}
+                            <strong>
+                            <span class="typed_element">
+                                <div class="typed_sub-element">Hello!^1500</div>
+                                <div class="typed_sub-element">I am Jordy =D^1500</div>
+                                <div class="typed_sub-element">Welvcome t</div>
+                                <div class="typed_sub-element">Welcome to my blog. :)^1000</div>
+                            </span>
+                            </strong>
+
+                            <!--  TODO - DETECCION DE LENGUAJE Y REGION DE LECTORES
+                            <script type="text/javascript">
+                                var language = window.navigator.userLanguage || window.navigator.language;
+                                var region = navigator.language.split('-')[1];  // 'it' = italy, 'en-US' = english US
+                                var userLanguage = navigator.language.split('-')[0];
+
+
+                                ** Hola
+                                ** Me llamo JordyCuan
+                                ** Me gustan muchas cosas
+                                ** Como Machine Learning
+                                ** Como Aplicaciones web
+                                ** También Android
+                                ** ¡Bienvenido!
+                            </script>
+                            
+
+                            -->
+
+                            <!-- jQuery -->
+                            <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+                            <!-- Typed -->
+                            <script src="{{ "/js/typed.js " | prepend: site.baseurl }}"></script>
+                            
+                            <!-- Page Description -->
+                            <script src="{{ "/js/description.js " | prepend: site.baseurl }}"></script>
+
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			{{ content }}
+		</div>
+	</div>
+</div>
+
+<hr>

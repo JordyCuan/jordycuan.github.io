@@ -1,0 +1,27 @@
+# Site settings
+title: Jordy Cuan
+header-img: img/home-bg.jpg
+#email: your-email@yourdomain.com
+description: "Jordy Cuan - My own programming experiences"
+baseurl: ""
+url: "http://jordycuan.github.io"
+twitter_username: JordyCRPetrucci
+github_username:  jordycuan
+google_plus_username:  JordyCuanPetrucci
+cv_en:  "https://goo.gl/WwgCRc"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+plugins: [jekyll-paginate]
+exclude: ["less","node_modules","Gruntfile.js","package.json","READ ME.md"]
+
+## ???
+analytics :
+  provider : google
+  google:
+    tracking_id : 'UA-72258304-1'
+  getclicky :
+    site_id

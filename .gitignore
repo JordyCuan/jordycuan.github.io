@@ -1,0 +1,12 @@
+.jekyll-metadata
+_site
+notas.txt
+
+.ipynb_checkpoints
+*.ipynb
+*.zip
+.DS_Store
+.vscode
+
+node_modules
+.jekyll-cache

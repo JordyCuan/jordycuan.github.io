@@ -1,0 +1,19 @@
+*Charts animation duration
+
+*Realm DB - Investigacion
+
+*Redes Neuronales
+
+*Hill ascend/descend and Gradiend descent
+
+*Regression simple
+
+*Regression multivariable
+
+*SailsJS
+
+*React con SailsJS
+
+*Simple Servidor FTP en Raspberry PI con un HDD 
+
+*DoS Attack

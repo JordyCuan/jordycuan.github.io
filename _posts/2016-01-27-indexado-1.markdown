@@ -1,0 +1,238 @@
+---
+layout: post
+title: "Recuperación y Tratamiento de Información (Parte 1)"
+subtitle:   "Indexado de documentos locales y elaboración de consultas."
+date:       2016-03-27 12:00:00
+header-img: "img/post-bg-02.jpg"
+author:     "Jordy Cuan"
+code_syntax: True
+
+tags: [información, python, indexado]
+---
+
+<p>Comenzando con un nuevo post para el blog sobre lo que es indexado, ya saben, eso que hace google de modo inconmensurable al internet.</p>
+
+<p>Me gustaría darles algunos conceptos básicos demás pero como siempre me ha gustado ir al grano, les recomiendo que si quieren entender esto más a fondo busquen por "<a href="http://bit.ly/1PBsMgB">Lógica booleana</a>" y "<a href="http://bit.ly/20tcgHA">Grep</a>"</p>
+
+
+<h1 class="section-heading">Técnica de matrices de incidencia</h1>
+
+<p>Las matrices de incidencia son tablas las cuales relacionan  un documento con una palabra, y cada celda toma el valor de un cero o un uno, con esto sabemos si una palabra se encuentra presente en el archivo y nos permite realizar la consulta de lógica booleana con una mayor velocidad.</p>
+
+<p>Por ejemplo, si buscáramos los documentos que contienen la palabra "Empleado", debemos acceder a la columna de la palabra y devolver cada documento que la contiene (primer columna de la izquierda), en este caso cada 'celda' donde encontremos un uno. Para este ejemplo sólo devolvería el documento "Contrato de trabajador.txt".</p>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Nombre</th>
+    <th>Navidad</th>
+    <th>Empleado</th>
+  </tr>
+  <tr>
+    <td>Presentación.txt</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Contrato de trabajador.txt</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Carta navideña.txt</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+</table>
+
+
+<p>Algunos ya se habrán dado cuenta, otros van a asentir ahora que lo lean, y es que este modelo de indexado de documentos es que para cada palabra que no existe dentro del documento, se emplea un entero en memoria y produce un mal gaste de la memoria. Entonces ¿qué hacemos?</p>
+
+
+<h1 class="section-heading">Índices Invertidos</h1>
+
+<p>En esta técnica, se tiene que decir en qué documento se encuentra cada término, para ello <b>se define un diccionario el cual contiene todas las palabras</b> encontradas dentro de cada documento y <b>cada palabra tiene asociada una lista</b> donde están almacenadas las <b>referencias de cada documento donde haya aparecido esta palabra</b>. A cada referencia de documento donde se haya dicha palabra se le llama <b>posting</b>, y a al arreglo/lista donde están todos los documentos enlistados se le llama <b>postings</b>.
+</p>
+
+<p>Veámoslo usando la misma tabla anterior:</p>
+
+<table>
+  <tr>
+    <th><u>Diccionario</u></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <th>Nombre</th>
+    <td>Presentación.txt</td>
+    <td>Contrato de trabajador.txt</td>
+    <td>Carta navideña.txt</td>
+  </tr>
+  <tr>
+    <th>Navidad</th>
+    <td colspan="3">Carta navideña.txt</td>
+  </tr>
+  <tr>
+    <th>Empleado</th>
+    <td colspan="3">Contrato de trabajador.txt</td>
+  </tr>
+</table>
+
+
+<p>Como se puede apreciar en la tabla anterior, ahora con solo acceder a la fila "Empleado", ya sabemos que este está en el documento "Contrato de trabajador.txt" y del mismo modo con la palabra "Nombre" sabemos que aparece en todos los documentos.</p>
+
+
+<h1 class="section-heading">Metodología para Indexar Documentos</h1>
+
+
+<p>Para llevar a cabo la indexación de documentos, se llevan a cabo los siguientes pasos:</p>
+
+<p>
+	<ul>
+		<li>En primer lugar tenemos que agrupar los documentos que procesaremos con el algoritmo.</li>
+
+		<li>Tokenizar el texto de los documentos, preprocesar el contenido.</li>
+
+		<li>Normalizar los resultados arrojados, como por ejemplo, si nos llegamos a encontrar la palabra ‘amigos’, almacenarla como ‘amigo’, con esto evitaremos tener que almacenar elementos con el mismo lemma.</li>
+
+		<li>Indexar. Hacer el diccionario de listas. Para este paso, se extraen todas las palabras de cada documento. 
+			<ul>
+				<li>
+					Si la palabra aún no se encuentra dentro del diccionario, se añade como llave de nuestra tabla hash y como valor se le asigna una lista de un elemento que es el archivo donde se encontró.
+				</li>
+				<li>
+					Si la palabra ya se encuentra dentro del diccionario, se toma el documento donde se encontró y este es aprendizado a la lista de dicha palabra. Así hasta haber recorrido todos los documentos.
+				</li>
+			</ul>
+		</li>
+
+		<li>Para hacer una consulta donde aparezca una palabra, lo único que se debe hacer es acceder al diccionario (tabla hash) y traer de vuelta la lista (postings), con ello sabremos que en esos documentos se contiene la petición. Si se desean manejar consultas de dos o más elementos se debe de traer todos los postings de cada palabra y aplicarles un poco de teoría de conjuntos, ya sea <b>intersección</b> (and), <b>union</b> (or), <b>resta</b>, <b>or</b> <b>exclusivo</b>, etc. según se desee.</li>
+	</ul>
+</p>
+
+
+<h1 class="section-heading">Python: Indexado de documentos locales</h1>
+
+<p>Aquí les presento un pequeño script que indexa los documentos en formato ".txt" recorriendo un árbol de direcciones a partir de donde se ejecuta el script (o de una raíz dada), extrayendo todos los nombres de los ficheros en una lista que se emplea dentro del ciclo que indexa estos documentos para conseguir el diccionario. Al finalizar, se pide al usuario introducir una consulta, si la consulta tiene una longitud de un elemento entonces se imprimen los postings, si tiene una longitud mayor, se procesan todos los postings de los elementos con un poco de lógica de conjuntos... aajah... aajah... el algoritmo de la sección anterior con otras palabras. AL GRANO! DAME EL CÓDIGO!</p>
+
+{% highlight python %}
+# -*- coding: utf-8 -*-
+import os
+from os.path import isfile, join
+import string
+
+RAIZ = './'
+EXTENSION = ".txt"
+
+###############################################
+# Escaneamos el árbol de ficheros y guardamos #
+# en una lista los ficheros con extensión txt #
+###############################################
+archivos_txt = []
+for base, dirs, files in os.walk(RAIZ):
+	for file in files:
+		fich = join(base, file)
+		if fich.endswith(EXTENSION):
+			archivos_txt.append(fich)
+
+
+# {palabra : documento}
+diccionario = {}
+
+
+
+#########################################
+#      Llenamos el diccionario          #
+#########################################
+for arch in archivos_txt:
+
+	t = open(arch).read().lower()
+	t = t.translate(string.maketrans("",""), string.punctuation) # 'Quitar' puntuación
+
+	pals = t.split()
+	for p in pals:
+		if not p in diccionario:
+			diccionario[p] = set()
+		diccionario[p].add(arch)
+
+
+
+#############################
+#      Hacer Consultas      #
+#############################
+while True:
+	op = raw_input("\nIntroduce tu búsqueda:\n>>> ")
+	op = op.translate(string.maketrans("",""), string.punctuation)
+
+	busq = op.split()
+
+	# Para un solo elemento
+	if len(busq) == 1:
+		# op = lemma(op.decode('utf-8'))
+
+		if op in diccionario:
+			for res in diccionario[op]:
+				print res
+			print
+			print ">>> Resultados:" , len(diccionario[op]), "<<<\n"
+		else:
+			print ">>> No hubo resultados para esta búsqueda <<<\n"
+
+	# Más de un elemento
+	elif len(busq) > 1:
+		tipo = raw_input("\nQué tipo de búsqueda desea realizar:\n" + 
+						"A) AND\n" + 
+						"B) OR\n" + 
+						"C) RESTA\n" + 
+						">>> ").lower()
+
+		conjb = []
+		for i in xrange(len(busq)):
+			r = set() if busq[i] not in diccionario else diccionario[busq[i]]
+			conjb.append(r)
+
+		resultado = conjb[0]
+
+		for i in range(1, len(busq)):
+			if tipo == 'a':
+				resultado = resultado & conjb[i]
+			elif tipo == 'b':
+				resultado = resultado | conjb[i]
+			elif tipo == 'c':
+				resultado = resultado - conjb[i]
+
+
+		# Mostramos los resultados
+		for res in resultado:
+			print res
+		print
+		print ">>> Resultados:" , len(resultado), "<<<\n"
+
+	print "Presionar 'ctrl' + 'c' para salir del programa"
+{% endhighlight %}
+
+
+<p>En este código se pueden apreciar algunas cosas. Las operaciones booleanas las he realizado usando conjuntos de Python (<a href="https://docs.python.org/2/library/stdtypes.html#set">Set</a>) y he aprovechado las funciones nativas del lenguaje para realizar el And, Or y Resta (Or exclusivo). Se puede apreciar esto que les digo en las líneas 71 al 74, 80, 82 y 84 del código.</p>
+
+<p><b>Tarea:</b> Saquen el lemma de las palabras para evitar tener diferentes entradas en las llaves como "árbol" y "árboles". Puedes usar una librería como NLTK o Clips Pattern para que sea más fácil</p>
+
+<h3>¿Qué tan buenos son los documentos devueltos?</h3>
+
+<p>Algo extra que me gustaría decir es que para medir la efectividad de los resultados devueltos por la consulta hay dos maneras de medir la efectividad de un buscador:
+	<ul>
+		<li>
+			<b>Precisión</b>: Fracción de los documentos recibidos que tienen información relevante al usuario.			
+		</li>
+		<li>
+			<b>Recall</b>: Fracción de los documentos relevantes en la colección que son devueltos.
+		</li>
+	</ul>
+</p>
+
+Las dos mediciones no suelen ser muy efectivas en cierto modo, así que podemos usar una más equilibrada que media entre ambas soluciones anteriores:
+
+<div style="text-align: center;"><b>F<sub>measure</sub></b> = 0.5 · P·R·P + R</div>
