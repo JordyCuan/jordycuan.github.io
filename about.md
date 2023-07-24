@@ -5,15 +5,11 @@ description: "Jordy Cuan."
 header-img: "./img/about-bg.jpg"
 ---
 
-{% include skills.html %}
-
-&nbsp;&nbsp;&nbsp;&nbsp;
 # *Hi there!*
 
 <div style="text-align: justify">
-	My name is <b>Jordy Cuan</b> and I'm a passionate Software Developer who can build useful web services. I am highly knowledgeable in Javascript (ECMA 6 & 7) development ecosystem and also fluent on python scripting with great experience building back-end architectures; working with excellent people; and constantly learning.
+    My name is <b>Jordy Cuan</b> and I am currently a Software Developer at Globant, where I've been growing professionally for around four years. With a keen interest in Python and JavaScript, I have been helping businesses build resilient data engineering solutions and web services. I have a hands-on approach and believe in continuously learning to stay abreast of the latest technological trends.
 </div>
-<div class="row" style="padding-bottom: 1em"></div>
 
 <!--Personal Data-->
 <div>
@@ -37,20 +33,16 @@ header-img: "./img/about-bg.jpg"
 <div class="row" style="padding-top: 3em; text-align: justify;">
     <div class="col-md-3"><h3>Technical Skills</h3></div>
     <div class="col-md-9">
-        <h4>Javascript:</h4>
-        <div>Fluent in  ES2015. Knowledge in VueJS and React ecosystem, JS unit testing with Cypress, SuperTest and Mocha. NodeJS, ExpressJS, SailsJS, RESTful APIs, Web-sockets, Amazon Web Services (node sdk).</div>
-        <div class="row" style="padding-bottom: 1em"></div>
-
         <h4>Python:</h4>
-        <div>Python 2 & 3, Django, Flask, scikit-learn, numpy, pandas, matplotlib, plotly.</div>
+        <div>Python 3, Django, Flask, FastAPI, SQLAlchemy, scikit-learn, numpy, pandas, matplotlib.</div>
         <div class="row" style="padding-bottom: 1em"></div>
 
         <h4>DB:</h4>
-        <div>Redis, Mongoose (MongoDB) and Sequelize (MySQL/PostgreSQL). <i>Honestly, I prefer to type queries instead of using an ORM.</i></div>
+        <div>Redis, MySQL, MongoDB, PostgreSQL.</div>
         <div class="row" style="padding-bottom: 1em"></div>
 
         <h4>Deployment:</h4>
-        <div>AWS EC2 Instances management, NGINX and Docker (just a little).</div>
+        <div>AWS EC2 Instances management, NGINX, Docker and Kubernetes (just a little).</div>
         <div class="row" style="padding-bottom: 1em"></div>
 
         <h4>Other:</h4>
@@ -78,17 +70,23 @@ header-img: "./img/about-bg.jpg"
 <div class="row" style="padding-top: 3em;">
     <div class="col-md-3"><h3>Experience</h3></div>
     <div class="col-md-9">
-        <h4>Mimoni / Lumbrera Labs</h4>
-        <div>Software Engineer, 2017-</div>
+        <h4>Globant</h4>
+        <div>Software Developer (Client: Finning Canada), May 2023 - Present</div>
+        <div>Senior Software Developer (Client: XPO Logistics), September 2019 - April 2021</div>
+        <div class="row" style="padding-bottom: 1em"></div>
+
+        <h4>Lumbrera</h4>
+        <div>Backend Developer (Client: Grupo Carso), May 2019 - September 2019</div>
+        <div>Software Developer, March 2019 - May 2019</div>
+        <div>Frontend Developer (Client: Grupo Carso), November 2018 - March 2019</div>
+        <div>Back-end Developer (Client: Gentera), May 2017 - April 2018</div>
         <div class="row" style="padding-bottom: 1em"></div>
 
         <h4>OneRender</h4>
         <div>Back-end Developer (Intern), Aug 2016 - Dec 2016</div>
         <div class="row" style="padding-bottom: 1em"></div>
 
-        <h4>Benemérita Universidad Autónoma de Puebla</h4>
-        <div>Research Assistant, 2014-2015</div>
-        <div class="row" style="padding-bottom: 1em"></div>
+        <!-- All other roles, following the same pattern -->
     </div>
 </div>
 
@@ -156,14 +154,3 @@ header-img: "./img/about-bg.jpg"
     <img src="{{ site.baseurl }}/img/yo_.jpg" class="img-responsive img-circle" style="margin-top: 60px; display: inline-block; width: 300px; height: 300px;">
 </div>
 <span class="caption text-muted">Jordy Cuan.</span>
-
-
-
-
-
-
-
-
-
-
-
