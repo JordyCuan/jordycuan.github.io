@@ -8,7 +8,6 @@ url: "http://jordycuan.github.io"
 twitter_username: JordyCRPetrucci
 github_username:  jordycuan
 linkedin_username:  jordycuan
-#cv_en:  "https://goo.gl/WwgCRc"
 
 # Build settings
 markdown: kramdown
@@ -22,6 +21,6 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","READ ME.md"]
 analytics :
   provider : google
   google:
-    tracking_id : 'UA-72258304-1'
+    tracking_id : ''
   getclicky :
     site_id
