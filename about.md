@@ -14,11 +14,6 @@ header-img: "./img/about-bg.jpg"
 <!--Personal Data-->
 <div>
 	<div class="row">
-	    <div class="col-md-2"><b>Email</b></div>
-	    <div class="col-md-8"><a href="mailto:jcuan4@gmail.com" target="_top">jcuan4@gmail.com</a></div>
-	</div>
-
-	<div class="row">
 	    <div class="col-md-2"><b>LinkedIn</b></div>
 	    <div class="col-md-8"><a target="_blank" href="https://www.linkedin.com/in/jordycuan/">https://www.linkedin.com/in/jordycuan/</a></div>
 	</div>
